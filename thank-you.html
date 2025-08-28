@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour votre message !</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #f8f9fa;
+            color: #181A20;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thank-you-container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(24,26,32,0.08);
+            padding: 2.5rem 2rem;
+            max-width: 400px;
+            width: 95vw;
+            text-align: center;
+        }
+        .thank-you-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+        .thank-you-title {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #E4405F 0%, #1877F3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-bottom: 0.5em;
+        }
+        .thank-you-message {
+            font-size: 1.1rem;
+            margin-bottom: 2em;
+            color: #181A20;
+        }
+        .back-home-btn {
+            display: inline-block;
+            background: linear-gradient(90deg,#E4405F 0%,#ffd700 100%);
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            padding: 0.9em 2.2em;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 24px #ffd70033;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .back-home-btn:hover {
+            background: linear-gradient(90deg,#ffd700 0%,#E4405F 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 600px) {
+            .thank-you-container {
+                padding: 1.2rem 0.5rem;
+            }
+            .thank-you-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-icon">🎉</div>
+        <div class="thank-you-title">Merci pour votre message !</div>
+        <div class="thank-you-message">
+            Nous avons bien reçu votre demande.<br>
+            Notre équipe vous répondra dans les plus brefs délais.
+        </div>
+        <a href="index.html" class="back-home-btn">Retour à l'accueil</a>
+    </div>
+</body>
+</html>
