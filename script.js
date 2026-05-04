@@ -52,36 +52,45 @@ document.addEventListener('DOMContentLoaded', function() {
     function initMobileMenu() {
         const menuToggle = document.querySelector('.menu-toggle');
         const navigation = document.querySelector('.navigation');
+        const navOverlay = document.getElementById('nav-overlay');
         
+        function closeMenu() {
+            navigation.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function openMenu() {
+            navigation.classList.add('active');
+            menuToggle.classList.add('active');
+            if (navOverlay) navOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
         if (menuToggle && navigation) {
             menuToggle.addEventListener('click', function() {
-                navigation.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-                
-                // Empêcher le scroll du body quand le menu est ouvert
                 if (navigation.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
+                    closeMenu();
                 } else {
-                    document.body.style.overflow = '';
+                    openMenu();
                 }
             });
             
             // Fermer le menu quand on clique sur un lien
             const navLinks = navigation.querySelectorAll('a');
             navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navigation.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
+                link.addEventListener('click', closeMenu);
             });
+            
+            // Close menu on overlay click
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeMenu);
+            }
             
             // Fermer le menu en cliquant à l'extérieur
             document.addEventListener('click', (e) => {
                 if (!menuToggle.contains(e.target) && !navigation.contains(e.target)) {
-                    navigation.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.style.overflow = '';
+                    closeMenu();
                 }
             });
         }
@@ -286,10 +295,27 @@ document.addEventListener('DOMContentLoaded', function() {
         initParallax();
         initPropertyCards();
         initButtonAnimations();
+        initSectionReveal();
     }
     
     // Démarrer l'application
     init();
+    
+    // Section reveal on scroll
+    function initSectionReveal() {
+        const sections = document.querySelectorAll('.reveal-section');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        
+        sections.forEach(section => revealObserver.observe(section));
+    }
     
     // Ajouter des styles CSS pour les animations améliorées
     const style = document.createElement('style');

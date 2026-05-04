@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manazil Assafoi - Immobilier professionnel</title>
+    <meta name="description"
+        content="Manazil Assafoi – Appartements, villas et commerces haut de gamme à Dar Bouazza, Casablanca. À 5 minutes du Morocco Mall.">
+    <meta name="theme-color" content="#080f1a">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="thank-you.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- En-tête -->
     <header class="header">
-    <div class="container header-flex">
-        <a href="#accueil" class="logo-area">
-            <!-- Old logo image next to Manazil Assafoi -->
-            <img src="logo.png" alt="Logo Manazil Assafoi" class="logo-img" style="width:48px;height:48px;object-fit:contain;">
-            <span class="logo-text">Manazil Assafoi</span>
-        </a>
-        <nav class="navigation" id="main-nav">
-            <a href="#accueil">Accueil</a>
-            <a href="#a-propos">À propos</a>
-            <a href="actualite.html">Actualités</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</header>
+        <div class="container header-flex">
+            <a href="#accueil" class="logo-area">
+                <!-- Old logo image next to Manazil Assafoi -->
+                <img src="logo.png" alt="Logo Manazil Assafoi" class="logo-img"
+                    style="width:48px;height:48px;object-fit:contain;">
+                <span class="logo-text">Manazil Assafoi</span>
+            </a>
+            <nav class="navigation" id="main-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#a-propos">À propos</a>
+                <a href="actualite.html">Actualités</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
 
     <!-- Section Hero -->
     <section id="accueil" class="hero">
@@ -64,6 +71,10 @@
             </p>
             <a href="#contact" class="cta-button">Demandez une visite</a>
         </div>
+        <div class="scroll-indicator">
+            <span>Défiler</span>
+            <div class="scroll-arrow"></div>
+        </div>
     </section>
 
     <script>
@@ -78,7 +89,7 @@
             // Move slides
             const translateX = -currentSlide * 20; // 20% for each slide
             carouselSlides.style.transform = `translateX(${translateX}%)`;
-            
+
             // Update navigation dots
             navDots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
@@ -132,7 +143,7 @@
         function handleSwipe() {
             const swipeThreshold = 50;
             const diff = touchStartX - touchEndX;
-            
+
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
                     nextSlide();
@@ -159,38 +170,83 @@
     </script>
 
     <!-- Section À propos -->
-    <section id="a-propos" class="about">
+    <section id="a-propos" class="about reveal-section">
         <div class="container">
             <div class="section-header">
                 <h2>À propos de nous</h2>
-                <p>Découvrez notre projet immobilier exceptionnel</p>
+                <p>Un projet immobilier d'exception au cœur de Dar Bouazza</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Manazil Assafoi est un projet immobilier situé à Dar Bouazza, Casablanca, 
-                        à seulement 5 minutes du Morocco Mall et proche de toutes les commodités.
-                    </p>
-                    <p>
-                        Nous offrons une gamme complète de biens immobiliers : des appartements 
-                        modernes, des lots de villas spacieuses et des lots de commerce ainsi 
-                        que des magasins pour répondre à tous vos besoins.
-                    </p>
-                    <p>
-                        Notre emplacement stratégique vous garantit un accès facile aux centres 
-                        commerciaux, écoles, hôpitaux et transports en commun, faisant de 
-                        Manazil Assafoi l'adresse idéale pour votre investissement immobilier.
+
+            <!-- Intro text centered -->
+            <div class="about-intro">
+                <p>
+                    <strong>Manazil Assafoi</strong> est un projet immobilier de standing situé à
+                    <strong>Dar Bouazza, Casablanca</strong>, à seulement 5 minutes du Morocco Mall.
+                    Nous proposons des appartements modernes, des lots de villas spacieuses,
+                    des lots de commerce et des magasins — le tout dans un cadre de vie pensé pour vous.
+                </p>
+            </div>
+
+            <!-- Stats row -->
+            <div class="about-stats">
+                <div class="about-stat-item">
+                    <span class="stat-number" data-target="150">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Appartements livrés</span>
+                </div>
+                <div class="about-stat-item">
+                    <span class="stat-number" data-target="5">0</span><span class="stat-unit">min</span>
+                    <span class="stat-label">Du Morocco Mall</span>
+                </div>
+                <div class="about-stat-item">
+                    <span class="stat-number" data-target="100">0</span><span class="stat-unit">%</span>
+                    <span class="stat-label">Satisfaction client</span>
+                </div>
+            </div>
+
+            <!-- Feature cards -->
+            <div class="about-features">
+                <div class="about-feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h4>Qualité premium</h4>
+                    <p>Des finitions haut de gamme et des matériaux soigneusement sélectionnés pour un confort optimal.
                     </p>
                 </div>
-                <div class="about-image">
-                    <img src="assafoi.png" alt="Projet Manazil Assafoi">
+                <div class="about-feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                            <circle cx="12" cy="9" r="2.5" />
+                        </svg>
+                    </div>
+                    <h4>Emplacement stratégique</h4>
+                    <p>Accès facile aux centres commerciaux, écoles, hôpitaux et transports en commun.</p>
+                </div>
+                <div class="about-feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7" rx="1" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" />
+                            <rect x="14" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                    </div>
+                    <h4>Large choix de biens</h4>
+                    <p>Appartements, lots de villas, lots de commerce et magasins — un bien pour chaque besoin.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section Localisation -->
-    <section id="localisation" class="location">
+    <section id="localisation" class="location reveal-section">
         <div class="container">
             <div class="section-header">
                 <h2>Localisation</h2>
@@ -199,13 +255,9 @@
             <div class="location-content">
                 <div class="location-map">
                     <div class="map-container">
-                        <iframe 
+                        <iframe
                             src="https://maps.google.com/maps?q=33.54504642097728,-7.727937667247765&hl=fr&z=15&output=embed"
-                            width="100%" 
-                            height="400" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
@@ -225,7 +277,7 @@
                             <p>Accès direct à l'autoroute</p>
                         </div>
                     </div>
-              
+
                     <div class="location-item">
                         <div class="location-icon">🎓</div>
                         <div class="location-text">
@@ -255,13 +307,13 @@
 
 
     <!-- Section Témoignages -->
-    <section class="testimonials">
+    <section class="testimonials reveal-section">
         <div class="section-title">
             <h2>Les avis des résidents</h2>
-
         </div>
         <div class="testimonial-container">
             <div class="testimonial-item">
+                <div class="testimonial-stars">★★★★★</div>
                 <div class="avatar">
                     <img src="avatar-4.png" alt="Avatar N.B">
                 </div>
@@ -269,6 +321,7 @@
                 <p>Projet de luxe. Service vente excellent.</p>
             </div>
             <div class="testimonial-item">
+                <div class="testimonial-stars">★★★★★</div>
                 <div class="avatar">
                     <img src="avatar-2.png" alt="Avatar A.L">
                 </div>
@@ -276,137 +329,167 @@
                 <p>Personnellement, je suis très satisfaite. Merci à toute l'équipe Manazil Assafoi.</p>
             </div>
             <div class="testimonial-item">
+                <div class="testimonial-stars">★★★★★</div>
                 <div class="avatar">
                     <img src="avatar-3.png" alt="Avatar N.B">
                 </div>
                 <h4>N.B</h4>
                 <p>Je confirme que c'est un très beau projet, avec un cadre très agréable et une équipe au top.</p>
             </div>
-            
         </div>
         <div class="testimonial-dots">
             <span class="dot active"></span>
+            <span class="dot"></span>
             <span class="dot"></span>
         </div>
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="contact">
-  <div class="container">
-    <div class="section-header">
-      <h2>Contactez-nous</h2>
-      <p>Notre équipe vous répond rapidement et avec professionnalisme.</p>
-    </div>
-    <div class="contact-content-modern">
-      <div class="contact-info-modern">
-        <div class="contact-item-modern">
-          <div class="contact-icon-modern" style="background:linear-gradient(90deg,#25D366 40%,#1877F3 100%);">
-            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.1 12.045C2.111 6.479 6.58 2.01 12.153 2c2.671.004 5.181 1.043 7.072 2.936a9.935 9.935 0 012.929 7.086c-.013 5.566-4.482 10.035-10.056 10.035zm8.413-18.412A11.815 11.815 0 0012.153 0C5.453.011.111 5.36.1 12.057a11.822 11.822 0 001.633 6.061L.057 24l6.063-1.615a11.87 11.87 0 005.999 1.537h.005c6.699 0 12.142-5.348 12.153-11.942a11.82 11.82 0 00-3.488-8.093z"/></svg>
-          </div>
-          <div>
-            <h4>WhatsApp</h4>
-            <p><a href="https://wa.me/212661848012" target="_blank">+212 6 61 84 80 12<br>+212 6 61 85 48 76</a></p>
-          </div>
-        </div>
-        <div class="contact-item-modern">
-          <div class="contact-icon-modern" style="background:linear-gradient(90deg,#E4405F 40%,#1877F3 100%);">
-            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5v11A2.5 2.5 0 0 0 5.5 20h13a2.5 2.5 0 0 0 2.5-2.5v-11zm-1.5 0v.511l-8.5 5.314-8.5-5.314V6.5a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1zm-17 1.634l8.25 5.162a1 1 0 0 0 1 0l8.25-5.162V17.5a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1V8.134z"/></svg>
-          </div>
-          <div>
-            <h4>Email</h4>
-            <p><a href="mailto:contact@assafoi.com">contact@assafoi.com</a></p>
-          </div>
-        </div>
-        <div class="contact-item-modern">
-          <div class="contact-icon-modern" style="background:linear-gradient(90deg,#ffd700 40%,#1877F3 100%);">
-            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-          </div>
-          <div>
-            <h4>Adresse</h4>
-            <p>Dar Bouazza,Casablanca, Maroc</p>
-          </div>
-        </div>
-        <div class="contact-item-modern">
-          <div class="contact-icon-modern" style="background:linear-gradient(90deg,#E4405F 40%,#ffd700 100%);">
-            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0-6C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13h-1v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-          </div>
-          <div>
-            <h4>Horaires</h4>
-            <p>Bureau de vente ouvert de <strong>10H00 à 19H00</strong>, 7j/7</p>
-          </div>
-        </div>
-      </div>
-<form action="https://formspree.io/f/xkgvowoy" method="POST" class="contact-form-modern" autocomplete="off">
-  <div class="form-row">
-    <input type="text" name="name" placeholder="Votre nom" required autocomplete="off">
-  </div>
-  <div class="form-row">
-    <input type="tel" name="phone" placeholder="Votre téléphone" autocomplete="off">
-  </div>
-  <div class="form-row">
-    <select name="interest" required>
-      <option value="" disabled selected>Vous êtes intéressé par...</option>
-      <option value="appartements">Appartements</option>
-      <option value="villas">Lots de villa</option>
-      <option value="commerces">Lots de commerce</option>
-    </select>
-  </div>
-  <!-- Optional hidden subject -->
-  <input type="hidden" name="_subject" value="Nouveau message depuis le site web">
-  
-  <!-- Optional redirect after success -->
-  <input type="hidden" name="_next" value="thank-you.html">
-  
-  <button type="submit" class="submit-btn-modern">Envoyer le message</button>
-</form>
+    <section id="contact" class="contact reveal-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contactez-nous</h2>
+                <p>Notre équipe vous répond rapidement et avec professionnalisme.</p>
+            </div>
+            <div class="contact-content-modern">
+                <div class="contact-info-modern">
+                    <div class="contact-item-modern">
+                        <div class="contact-icon-modern"
+                            style="background:linear-gradient(90deg,#25D366 40%,#1877F3 100%);">
+                            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.1 12.045C2.111 6.479 6.58 2.01 12.153 2c2.671.004 5.181 1.043 7.072 2.936a9.935 9.935 0 012.929 7.086c-.013 5.566-4.482 10.035-10.056 10.035zm8.413-18.412A11.815 11.815 0 0012.153 0C5.453.011.111 5.36.1 12.057a11.822 11.822 0 001.633 6.061L.057 24l6.063-1.615a11.87 11.87 0 005.999 1.537h.005c6.699 0 12.142-5.348 12.153-11.942a11.82 11.82 0 00-3.488-8.093z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/212661848012" target="_blank">+212 6 61 84 80 12<br>+212 6 61 85
+                                    48 76</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-modern">
+                        <div class="contact-icon-modern"
+                            style="background:linear-gradient(90deg,#E4405F 40%,#1877F3 100%);">
+                            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">
+                                <path
+                                    d="M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5v11A2.5 2.5 0 0 0 5.5 20h13a2.5 2.5 0 0 0 2.5-2.5v-11zm-1.5 0v.511l-8.5 5.314-8.5-5.314V6.5a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1zm-17 1.634l8.25 5.162a1 1 0 0 0 1 0l8.25-5.162V17.5a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1V8.134z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@assafoi.com">contact@assafoi.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-modern">
+                        <div class="contact-icon-modern"
+                            style="background:linear-gradient(90deg,#ffd700 40%,#1877F3 100%);">
+                            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Dar Bouazza,Casablanca, Maroc</p>
+                        </div>
+                    </div>
+                    <div class="contact-item-modern">
+                        <div class="contact-icon-modern"
+                            style="background:linear-gradient(90deg,#E4405F 40%,#ffd700 100%);">
+                            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0-6C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13h-1v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Bureau de vente ouvert de <strong>10H00 à 19H00</strong>, 7j/7</p>
+                        </div>
+                    </div>
+                </div>
+                <form action="https://formspree.io/f/xkgvowoy" method="POST" class="contact-form-modern"
+                    autocomplete="off">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Votre nom" required autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" name="phone" placeholder="Votre téléphone" autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <select name="interest" required>
+                            <option value="" disabled selected>Vous êtes intéressé par...</option>
+                            <option value="appartements">Appartements</option>
+                            <option value="villas">Lots de villa</option>
+                            <option value="commerces">Lots de commerce</option>
+                            <option value="commerces">Magazins</option>
+                        </select>
+                    </div>
+                    <!-- Optional hidden subject -->
+                    <input type="hidden" name="_subject" value="Nouveau message depuis le site web">
 
-    </div>
-  </div>
-</section>
+                    <!-- Optional redirect after success -->
+                    <input type="hidden" name="_next" value="thank-you.html">
 
-<section></section><!-- Pied de page -->
+                    <button type="submit" class="submit-btn-modern">Envoyer le message</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <section></section><!-- Pied de page -->
     <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo-block">
-      <img src="logo.png" alt="Manazil Assafoi" class="footer-logo" />
-      <span class="footer-brand">MANAZIL ASSAFOI</span>
-    </div>
-    <div class="footer-info">
-      <div>
-        <p>Notre bureau de vente est ouvert<br>de 10h00 à 19h00, 7j/7</p>
-      </div>
-      <div>
-        <p>Contactez-nous :</p>
-        <p>Téléphone : <a href="tel:+212661848012">+212 6 61 84 80 12 <br> +212 6 61 85 48 76</a></p>
-        <p>Email : <a href="mailto:contact@assafoi.com">contact@assafoi.com</a></p>
-      </div>
-    </div>
-    <div class="footer-social">
-      <span>Suivez nos réseaux sociaux</span>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/manazil_assafoi/" target="_blank" class="social-icon" aria-label="Instagram">
-          <!-- Instagram SVG -->
-          <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.363 3.678 1.344 2.697 2.325 2.462 3.437 2.404 4.718 2.346 5.998 2.334 6.407 2.334 12c0 5.593.012 6.002.07 7.282.058 1.281.293 2.393 1.274 3.374.981.981 2.093 1.216 3.374 1.274 1.28.058 1.689.07 7.282.07s6.002-.012 7.282-.07c1.281-.058 2.393-.293 3.374-1.274.981-.981 1.216-2.093 1.274-3.374.058-1.28.07-1.689.07-7.282s-.012-6.002-.07-7.282c-.058-1.281-.293-2.393-1.274-3.374-.981-.981-2.093-1.216-3.374-1.274C17.668.012 17.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
-        </a>
-        <a href="https://web.facebook.com/profile.php?id=61556008020815" target="_blank" class="social-icon" aria-label="Facebook">
-          <!-- Facebook SVG -->
-          <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0"/></svg>
-        </a>
-        <a href="https://wa.me/212661848012" target="_blank" class="social-icon" aria-label="WhatsApp">
-          <!-- WhatsApp SVG with matching viewBox -->
-          <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24">
-  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.1 12.045C2.111 6.479 6.58 2.01 12.153 2c2.671.004 5.181 1.043 7.072 2.936a9.935 9.935 0 012.929 7.086c-.013 5.566-4.482 10.035-10.056 10.035zm8.413-18.412A11.815 11.815 0 0012.153 0C5.453.011.111 5.36.1 12.057a11.822 11.822 0 001.633 6.061L.057 24l6.063-1.615a11.87 11.87 0 005.999 1.537h.005c6.699 0 12.142-5.348 12.153-11.942a11.82 11.82 0 00-3.488-8.093z"/>
-</svg>
-        </a>
-      </div>
-    </div>
-  </div>
-  <hr class="footer-divider">
-  <div class="footer-bottom">
-    <span>Tous droits réservés © 2025 MANAZIL ASSAFOI</span>
-  </div>
-</footer>
+        <div class="footer-content">
+            <div class="footer-logo-block">
+                <img src="logo.png" alt="Manazil Assafoi" class="footer-logo" />
+                <span class="footer-brand">MANAZIL ASSAFOI</span>
+            </div>
+            <div class="footer-info">
+                <div>
+                    <p>Notre bureau de vente est ouvert<br>de 10h00 à 19h00, 7j/7</p>
+                </div>
+                <div>
+                    <p>Contactez-nous :</p>
+                    <p>Téléphone : <a href="tel:+212661848012">+212 6 61 84 80 12 <br> +212 6 61 85 48 76</a></p>
+                    <p>Email : <a href="mailto:contact@assafoi.com">contact@assafoi.com</a></p>
+                </div>
+            </div>
+            <div class="footer-social">
+                <span>Suivez nos réseaux sociaux</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/manazil_assafoi/" target="_blank" class="social-icon"
+                        aria-label="Instagram">
+                        <!-- Instagram SVG -->
+                        <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.363 3.678 1.344 2.697 2.325 2.462 3.437 2.404 4.718 2.346 5.998 2.334 6.407 2.334 12c0 5.593.012 6.002.07 7.282.058 1.281.293 2.393 1.274 3.374.981.981 2.093 1.216 3.374 1.274 1.28.058 1.689.07 7.282.07s6.002-.012 7.282-.07c1.281-.058 2.393-.293 3.374-1.274.981-.981 1.216-2.093 1.274-3.374.058-1.28.07-1.689.07-7.282s-.012-6.002-.07-7.282c-.058-1.281-.293-2.393-1.274-3.374-.981-.981-2.093-1.216-3.374-1.274C17.668.012 17.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+                        </svg>
+                    </a>
+                    <a href="https://web.facebook.com/profile.php?id=61556008020815" target="_blank" class="social-icon"
+                        aria-label="Facebook">
+                        <!-- Facebook SVG -->
+                        <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24">
+                            <path
+                                d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/212661848012" target="_blank" class="social-icon" aria-label="WhatsApp">
+                        <!-- WhatsApp SVG with matching viewBox -->
+                        <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.1 12.045C2.111 6.479 6.58 2.01 12.153 2c2.671.004 5.181 1.043 7.072 2.936a9.935 9.935 0 012.929 7.086c-.013 5.566-4.482 10.035-10.056 10.035zm8.413-18.412A11.815 11.815 0 0012.153 0C5.453.011.111 5.36.1 12.057a11.822 11.822 0 001.633 6.061L.057 24l6.063-1.615a11.87 11.87 0 005.999 1.537h.005c6.699 0 12.142-5.348 12.153-11.942a11.82 11.82 0 00-3.488-8.093z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <span>Tous droits réservés © 2025 MANAZIL ASSAFOI</span>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
